@@ -1,0 +1,6 @@
+{
+	"_id":"1234",
+	"channel_name" : "DB Channel" , 
+	"members" : ["userID" , "userID" , "userID"] , 
+	"admin_id" : "userID"
+}
