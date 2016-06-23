@@ -347,6 +347,33 @@ body {
 .card.alt .button-container #button:active:before, .card.alt .button-container #button:focus:before {
   display: none;
 }
+/*added by kouchakyazdi*/
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    left: 170px;
+    bottom: 20px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+#logout{
+  position: relative;
+  /*top: 10px;  */
+  right: 10px; 
+}
+
+/*ending by kouchakyazdi*/
 
 /* Keyframes */
 @-webkit-keyframes buttonFadeInUp {
