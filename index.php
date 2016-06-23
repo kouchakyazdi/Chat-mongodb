@@ -1,8 +1,20 @@
+<?php
+session_start();
+if(isset($_SESSION["auth"]) && $_SESSION["auth"]) {
+echo "You Logedin before";
+header("Location: profile.php ");
+}
+$username = $_REQUEST["username"];
+$password = $_REQUEST["password"];
+$_SESSION["username"] = $_REQUEST["username"];
+$_SESSION["password"] = $_REQUEST["password"];
+?>
+
 <!DOCTYPE html>
 <html >
   <head>
     <meta charset="UTF-8">
-    <title>Material Login Form</title>
+    <title>Chat Login</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
     <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
