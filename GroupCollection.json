@@ -1,0 +1,5 @@
+{
+	"_id":"1234",
+	"group_name" : "DB Group" , 
+	"members" : ["userID" , "userID" , "userID"]
+}
