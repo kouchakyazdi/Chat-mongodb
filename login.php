@@ -1,5 +1,7 @@
 <?php
 session_start();
+$_SESSION['username'] = $_POST['username'];
+$_SESSION['password'] = $_POST['password'];
 
 $connection= new MongoClient();
 $db= $connection->test;
@@ -9,7 +11,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST") {
         $results = $collection->findOne(array('username' => $_POST['username']));
         if($results && $results['password'] == $_POST['password']){
         	$_SESSION["auth"] = True;
-			header("Location: profile.php");
+			header("Location: pofile_complete.php");
 		}
         else{
 		?>
