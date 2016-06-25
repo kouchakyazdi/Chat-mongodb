@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+<script>
+    function getAllUser() {
+        console.log("in getall user method");
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                console.log("response req");
+                document.querySelector("#allUserPanel").innerHTML = xhttp.responseText;
+            }
+        };
+        xhttp.open("GET", "findUser.php", true);
+        xhttp.send();
+    }
+</script>
+
+<script>
+    function showUser(str) {
+        if(str.length==0){
+            document.querySelector("#findUserPanel").innerHTML="";
+        }
+        xmlhttp=new XMLHttpRequest();
+        xmlhttp.onreadystatechange=function(){
+            if (xmlhttp.readyState ==4 && xmlhttp.status==200)
+               document.querySelector("#findUserPanel").innerHTML =  xmlhttp.responseText;
+        }
+        xmlhttp.open("POST","findUser.php",true);
+        xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xmlhttp.send("query="+escape(str));
+    }
+</script>
+
+    </div>
+<div class="panel panel-primary">
+    <button type="button" class="btn btn-primary btn-block" onclick="getAllUser()">Get all users</button>
+    <div id="allUserPanel" class="panel-body">Panel Content</div>
+</div>
+<form>
+    Enter user name :
+    <input type="text" onkeyup="showUser(this.value)">
+    <div id="findUserPanel" class="panel-body">Panel Content</div>
+</form>
+</body>
+</html>
