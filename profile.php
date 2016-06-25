@@ -22,8 +22,8 @@ if(!(isset($_SESSION["auth"]) && $_SESSION["auth"])){
 <div class="container">
   <div class="card"></div>
   <div class="card">
-    <h1 class="title">Complete your Profile</h1>
-    <form action="login.php" method="post">
+    <h1 class="title">Welcome "<?php echo $_SESSION["username"] ?>"</h1>
+    <form action="update_profile.php" method="post">
       <div class="input-container">
         <input type="text" name="name" id="name" required="required"/>
         <label for="name">name</label>
@@ -66,8 +66,8 @@ if(!(isset($_SESSION["auth"]) && $_SESSION["auth"])){
     </form>
     <br><br><br><br>
     <form action="logout.php" method="GET">
-      <div class="fileUpload btn">  
-        <input id="logout" type="submit" value="Logout" />
+      <div class="fileUpload btn">
+        <input id="logout" type="submit" name="submit" value="Logout"/>
       </div>
     </form>
 

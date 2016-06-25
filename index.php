@@ -1,17 +1,17 @@
 <?php
 session_start();
+?>
+
+<!DOCTYPE html>
+<html>
+<?php
+//$_SESSION["username"] = $_REQUEST["username"];
+//$_SESSION["password"] = $_REQUEST["password"];
 if(isset($_SESSION["auth"]) && $_SESSION["auth"]) {
 echo "You Logedin before";
 header("Location: profile.php ");
 }
-$username = $_REQUEST["username"];
-$password = $_REQUEST["password"];
-$_SESSION["username"] = $_REQUEST["username"];
-$_SESSION["password"] = $_REQUEST["password"];
 ?>
-
-<!DOCTYPE html>
-<html >
   <head>
     <meta charset="UTF-8">
     <title>Chat Login</title>
