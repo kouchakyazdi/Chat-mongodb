@@ -1,5 +1,5 @@
 <?php
-//session_start();
+session_start();
 
     $connection= new MongoClient();
     $db= $connection->test;
@@ -12,13 +12,13 @@
             $a[$i++] = $doc['username'] ;
         }
 //--------------------------------        
-        $q=$_POST["query"];
+        $q = $_POST["query"];
         if (strlen($q) > 0){
-            $hint="";
-            for($i=0; $i < count($a); $i++){
-                if (strtolower($q)==strtolower(substr($a[$i],0,strlen($q)))){
-                    if($hint==""){
-                        $hint=$a[$i];
+            $hint = "";
+            for($i = 0; $i < count($a); $i++){
+                if (strtolower($q) == strtolower(substr($a[$i],0,strlen($q)))){
+                    if($hint == ""){
+                        $hint = $a[$i];
                     }
                 }
             }
@@ -27,10 +27,10 @@
         }
         if ($hint == ""){ $response="no user ";
         }
-        else { $response=$hint;
+        else {
+            $response=$hint;
         }
         echo $response;
-//            $results = $collection->findOne(array('username' => $_POST['username']));
 
     }
     else if ($_SERVER['REQUEST_METHOD'] == 'GET'){
