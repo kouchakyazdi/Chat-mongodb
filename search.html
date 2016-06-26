@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Search</title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <script>
@@ -35,17 +37,23 @@
         xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xmlhttp.send("query="+escape(str));
     }
+    function addFriend() {
+        $.get("addFriend.php");
+        return false;
+    }
+    $('#findUserPanel').click(addFriend());
 </script>
 
     </div>
 <div class="panel panel-primary">
     <button type="button" class="btn btn-primary btn-block" onclick="getAllUser()">Get all users</button>
-    <div id="allUserPanel" class="panel-body">Panel Content</div>
+    <div id="allUserPanel" class="panel-body"></div>
 </div>
-<form>
+<form style="text-align: center">
     Enter user name :
-    <input type="text" onkeyup="showUser(this.value)">
-    <div id="findUserPanel" class="panel-body">Panel Content</div>
+    <input type="text" class="form-control" onkeyup="showUser(this.value)">
+    <div id="findUserPanel" class="panel-body"></div>
 </form>
 </body>
+
 </html>
