@@ -1,26 +1,18 @@
 <?php
 session_start();
-$_SESSION['username'] = $_POST['username'];
-$_SESSION['password'] = $_POST['password'];
-
-
-$connection = new MongoClient();
-$db = $connection->test;
+$connection= new MongoClient();
+$db= $connection->test;
 $userCollection = $db->User;
 
 if($_SERVER["REQUEST_METHOD"]=="POST") {
     if ($_POST['submit'] === "register") {
-        $doc= array("username"=>$_POST['username'] , "password"=>$_POST['password']);
+        $_SESSION["username"]=$_POST['username'];
+        $doc= array("_id" => $_POST['username']  ,"username"=>$_POST['username'] , "password"=>$_POST['password'] , "report" => 0);
         $userCollection->insert($doc);
-        header("Location: index.php");
-
-        //gathering information
+        echo "done";
+        header("Location: profile.php");
     }
 
-}
-else{
-	echo "not a post method";
-	var_dump($_SERVER["REQUEST_METHOD"]);
 }
 
 ?>

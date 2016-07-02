@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Chat-mongodb.iml" filepath="$PROJECT_DIR$/.idea/Chat-mongodb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/DB-Final.iml" filepath="$PROJECT_DIR$/.idea/DB-Final.iml" />
     </modules>
   </component>
 </project>

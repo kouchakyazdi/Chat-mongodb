@@ -1,16 +1,18 @@
 {
 	"_id" : "1234" ,
-	"user_name" : "ali user" ,
+	"username" : "ali user" ,
 	"password" : "password" ,
 	"name" : "ali" ,
 	"family" : "yazdi" , 
 	"email" : "example@gmail.com" ,
+	"birthday" : "1/1/1" ,
 	"phone_number" : ["09128684821" ,"33787943"] ,
 	"bio" : " i am student" ,
-	"friends" : ["user_name1" , "user_name2" , "user_name3"] , 
-	"messages" : ["messages1" , "messages2" , "messages3"] ,
+	"friends" : ["user_name1" , "user_name2" , "user_name3"] ,
 	"groups" : ["groups1" , "groups2" , "groups3"] ,
-	"channels" : ["channel1" , "channel2" , "channel3"] 
+	"channels" : ["channel1" , "channel2" , "channel3"] ,
+	"report" : 0,
+	"image" : "asdfadsfadsfadsf"
 }
 
 db.User.update(

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>profile</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chat.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+<div id="info">
+    <div id="image">
+
+    </div>
+    <div id="name">name : </div>
+    <div id="username">username : </div>
+    <div id="birthday">birthday : </div>
+    <div id="email">email : </div>
+    <div id="biography">biography : </div>
+    <div id="phonenumber">phone number : </div>
+    <div id="password">password : </div>
+    <div class="button-container"><input id="create-channel-button" type="submit" name="submit" value="create channel"></div>
+    <div class="button-container"><input id="create-group-button" type="submit" name="submit" value="create group"></div>
+    <div class="button-container"><input id="update-profile-button" type="submit" name="submit" value="update profile"></div>
+</div>
+
+<script src='./js/JQuery.js'></script>
+<script type="text/javascript">
+    $( window ).load(function() {
+
+        var buttonName="profile";//this.getAttribute("value");
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                var json = xhttp.responseText;
+                console.log(json);
+                var jsonparsed = JSON.parse (json);
+                console.log(jsonparsed);
+                //$("#image").append($("<img />").attr('src', 'data:image/png;charset=utf8;base64,' + jsonparsed.image));
+                $("#image").append($("<img />").attr('src', 'http://localhost/DB-Final/' + jsonparsed.image));
+                $("#name").html("name : "+jsonparsed.name);
+                $("#username").html("username : "+jsonparsed.username);
+                $("#birthday").html("birthday : "+jsonparsed.birthday);
+                $("#email").html("email : "+jsonparsed.email);
+                $("#biography").html("biography : "+jsonparsed.bio);
+                $("#phonenumber").html("phonenumber : "+jsonparsed.phone_number);
+                $("#password").html("password : "+jsonparsed.password);
+            }
+        };
+        xhttp.open("GET", "chatAction.php?button="+buttonName, true);
+        xhttp.send();
+    });
+
+</script>
+</body>
+</html>

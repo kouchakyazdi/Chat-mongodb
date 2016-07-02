@@ -1,20 +1,8 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
-<html>
-<?php
-//$_SESSION["username"] = $_REQUEST["username"];
-//$_SESSION["password"] = $_REQUEST["password"];
-if(isset($_SESSION["auth"]) && $_SESSION["auth"]) {
-echo "You Logedin before";
-header("Location: profile.php ");
-}
-?>
+<html >
   <head>
     <meta charset="UTF-8">
-    <title>Chat Login</title>
+    <title>Material Login Form</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
     <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
@@ -71,7 +59,7 @@ header("Location: profile.php ");
     </form>
   </div>
 </div>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://localhost/DB-Final/js/JQuery.js'></script>
 <script src="js/index.js"></script>
   </body>
 </html>

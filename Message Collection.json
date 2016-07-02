@@ -1,6 +1,7 @@
 {
 	"_id":"1234",
 	"content" : "message" , 
-	"owner" : "user_id" , 
-	"tag" : "private | groups | channel"
+	"owner" : "user_id" ,
+	"to" : "reciever_name | groups | channel",
+	"ts" : "MongoDate"
 }
